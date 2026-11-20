@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(waveshare_round_amoled_tests LANGUAGES C)
+project(waveshare_esp32_s3_touch_amoled_143_bsp_tests LANGUAGES C)
 include(CTest)
 if(BUILD_TESTING)
     foreach(name IN ITEMS shake changed_frame)

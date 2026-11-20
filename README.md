@@ -1,4 +1,4 @@
-# Waveshare round AMOLED board support
+# Waveshare ESP32-S3-Touch-AMOLED-1.43 board support
 
 ESP-IDF drivers for the **Waveshare ESP32-S3-Touch-AMOLED-1.43 (non-C)**. Send frames or rectangular updates to the panel, read touch and acceleration, or feed accelerometer samples to the shake detector.
 
@@ -7,7 +7,7 @@ ESP-IDF drivers for the **Waveshare ESP32-S3-Touch-AMOLED-1.43 (non-C)**. Send f
 Run `python3 tools/setup-board.py` from this repository to fetch the vendor driver files. In an existing ESP-IDF project, include the [board registration file](board/esp-idf.cmake) before ESP-IDF’s project file. Adjust the package path to your checkout.
 
 ```cmake
-include("${CMAKE_CURRENT_LIST_DIR}/third_party/waveshare-round-amoled/board/esp-idf.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/third_party/waveshare-esp32-s3-touch-amoled-1.43-bsp/board/esp-idf.cmake")
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 ```
 
