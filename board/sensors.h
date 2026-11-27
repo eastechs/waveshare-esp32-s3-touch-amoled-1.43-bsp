@@ -10,6 +10,7 @@ extern "C" {
 void board_i2c_init(void);
 esp_err_t board_touch_init(void);
 // Coordinates use the upright 466-pixel artwork space, before render downscaling. Read x and y only on a successful contact.
+// A read the touch chip misses is retried once, so an error means the chip really isn't answering.
 esp_err_t board_touch_read(bool *down, int *x, int *y);
 esp_err_t board_accel_init(void);
 // Apparent gravity in g, with axes right, down and toward the viewer.

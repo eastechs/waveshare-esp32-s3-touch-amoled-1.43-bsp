@@ -34,7 +34,10 @@ esp_err_t board_touch_read(bool *down, int *x, int *y)
 {
     if (!down || !x || !y) return ESP_ERR_INVALID_ARG;
     uint8_t data[5];
+    // The FT3168 leaves one read unanswered every 14 s or so, on a timer of its
+    // own, touching or not. Asking again straight away has always worked.
     esp_err_t error = read_registers(FT3168, 0x02, data, sizeof(data));
+    if (error != ESP_OK) error = read_registers(FT3168, 0x02, data, sizeof(data));
     if (error != ESP_OK) return error;
     *down = (data[0] & 15) != 0;
     if (*down) {
